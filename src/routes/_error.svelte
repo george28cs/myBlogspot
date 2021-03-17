@@ -1,40 +1,44 @@
 <script>
 	export let status;
-	export let error;
-
 	const dev = process.env.NODE_ENV === 'development';
 </script>
 
 <style>
-	h1, p {
-		margin: 0 auto;
+	.Error404{
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 
-	h1 {
-		font-size: 2.8em;
-		font-weight: 700;
-		margin: 0 0 0.5em 0;
+	.Error404-image figure{
+		margin: 0;
+		padding: 0;
+		text-align: right;
 	}
 
-	p {
-		margin: 1em auto;
+	.Error404 img {
+		width: 300px;
+		margin: 2em 0;
 	}
 
-	@media (min-width: 480px) {
-		h1 {
-			font-size: 4em;
-		}
-	}
 </style>
 
 <svelte:head>
 	<title>{status}</title>
 </svelte:head>
 
-<h1>{status}</h1>
+<div class="Error404">
+	<!-- <div class="Error404-message">
+		<h1>{status}</h1>
+		<p>{error.message}</p>
+		{#if dev && error.stack}
+			<pre>{error.stack}</pre>
+		{/if}
+	</div> -->
+	<div class="Error404-image">
+		<figure>
+			<img src="images/404.gif" alt="error 404">
+		</figure>
+	</div>
+</div>
 
-<p>{error.message}</p>
-
-{#if dev && error.stack}
-	<pre>{error.stack}</pre>
-{/if}
