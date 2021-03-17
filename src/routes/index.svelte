@@ -24,6 +24,8 @@
 	<title>Jorge Carrión</title>
 </svelte:head>
 
+<meta name="description" content ="Blog de Jorge Carrión">
+
 <div class="Home">
 	<div class="Post">
 		{#each posts as post}
